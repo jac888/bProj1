@@ -1,0 +1,12 @@
+c:\users\ldh\documents\visual studio 2015\Projects\bitcoinDemo\bitcoinDemo\bin\Debug\bitcoinDemo.exe.config
+c:\users\ldh\documents\visual studio 2015\Projects\bitcoinDemo\bitcoinDemo\bin\Debug\bitcoinDemo.exe
+c:\users\ldh\documents\visual studio 2015\Projects\bitcoinDemo\bitcoinDemo\bin\Debug\bitcoinDemo.pdb
+c:\users\ldh\documents\visual studio 2015\Projects\bitcoinDemo\bitcoinDemo\bin\Debug\NBitcoin.dll
+c:\users\ldh\documents\visual studio 2015\Projects\bitcoinDemo\bitcoinDemo\bin\Debug\NBitcoin.TestFramework.dll
+c:\users\ldh\documents\visual studio 2015\Projects\bitcoinDemo\bitcoinDemo\bin\Debug\Newtonsoft.Json.dll
+c:\users\ldh\documents\visual studio 2015\Projects\bitcoinDemo\bitcoinDemo\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+c:\users\ldh\documents\visual studio 2015\Projects\bitcoinDemo\bitcoinDemo\bin\Debug\NBitcoin.xml
+c:\users\ldh\documents\visual studio 2015\Projects\bitcoinDemo\bitcoinDemo\bin\Debug\Newtonsoft.Json.xml
+c:\users\ldh\documents\visual studio 2015\Projects\bitcoinDemo\bitcoinDemo\obj\Debug\bitcoinDemo.csprojResolveAssemblyReference.cache
+c:\users\ldh\documents\visual studio 2015\Projects\bitcoinDemo\bitcoinDemo\obj\Debug\bitcoinDemo.exe
+c:\users\ldh\documents\visual studio 2015\Projects\bitcoinDemo\bitcoinDemo\obj\Debug\bitcoinDemo.pdb
