@@ -103,22 +103,29 @@ namespace bitcoinDemo
             */
             #endregion
 
-            #region testing ScriptPubKey from hash to check addresses
+            #region testing / converting of publickey hash and  we can get address from it or even new a new script(keyID) from ScriptPubKey 
             /*
             var publicKeyHash = new KeyId("6239c056daaa921c156255567106cf7cfb0ab3ca"); //assign a KeyID var from a known pubhash.
 
             //var testNetAddress = publicKeyHash.GetAddress(Network.TestNet);
             //Console.WriteLine(testNetAddress.ScriptPubKey);
-            var mainNetAddress = publicKeyHash.GetAddress(Network.Main); //get bitcoin address from this KeyID
+            var mainNetAddress = publicKeyHash.GetAddress(Network.Main); //get bitcoin address from this hash of KeyID
             Console.WriteLine(mainNetAddress.ScriptPubKey); // OP_DUP OP_HASH160 6239c056daaa921c156255567106cf7cfb0ab3ca OP_EQUALVERIFY OP_CHECKSIG  <-- BitcoinAddres' ScriptPubKey
 
             var paymentScript = publicKeyHash.ScriptPubKey; //assign a new script from pervious keyID script
             var newMainNetAddress = paymentScript.GetDestinationAddress(Network.Main); //get BitcoinAddress from new paymentScript
 
             if (Debugger.IsAttached)
-                Console.WriteLine("two are equal? : " + (mainNetAddress == newMainNetAddress).ToString()); // True
+                Console.WriteLine("two are equal? : " + (mainNetAddress == newMainNetAddress).ToString()); // True?            
 
-            */
+            var samePublicKeyHash = (KeyId)paymentScript.GetDestination();
+            if (Debugger.IsAttached)
+                Console.WriteLine("two are equal? : " + (publicKeyHash == samePublicKeyHash).ToString()); // True?
+
+            var sameMainNetAddress2 = new BitcoinPubKeyAddress(samePublicKeyHash, Network.Main);
+            if (Debugger.IsAttached)
+                Console.WriteLine("two are equal? : " + (mainNetAddress == sameMainNetAddress2).ToString()); // True?
+                */
             #endregion
 
             //load up serect from a private key
