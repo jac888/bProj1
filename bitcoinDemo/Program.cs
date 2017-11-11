@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using NBitcoin;
 using NBitcoin.DataEncoders;
-using bitcoinDemo;
+using BlockChainDemo;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using QBitNinja.Client;
 using QBitNinja.Client.Models;
 
-namespace bitcoinDemo
+namespace BlockChainDemo
 {
     class Program
     {
