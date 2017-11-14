@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using QBitNinja.Client;
 using QBitNinja.Client.Models;
+using BlockChainDemo.Classes;
 
 namespace BlockChainDemo
 {
@@ -22,10 +23,16 @@ namespace BlockChainDemo
         public static string publicHash = "";
         public static string signature = "";
         public static string signature_v = "";
+        public static BitcoinAddress address;
 
         static void Main(string[] args)
         {
-       
+            //var demo = new BticoinBasics();
+            var demo = new BitcoinTrans();
+            demo.BtcTx();
+            //var demo = new NewKey();
+            // demo.newkey();
+            #region commented code block #1
             //NBitcoin Hierarchical Deterministic Wallet
             //ExtKey will generate a Key for a corresponding ID,
             //ExtPubKey will generate a PubKey for a corresponding ID.
@@ -33,9 +40,9 @@ namespace BlockChainDemo
             //byte[] byteArray = Encoders.Base58.DecodeData("KxPA5YkSzS46PW32cYZLTHBPGxidB3RP8efB4PbaKHojaUjMJrx3");
             //string hex1 = Encoders.Hex.EncodeData(byteArray);
 
-            //ExtKey privateKey = new ExtKey("123fff"); //can use random hex seed for generate extkey and store it to db
+            ExtKey privateKey = new ExtKey("123fff"); //can use random hex seed for generate extkey and store it to db
 
-            //ExtPubKey pubKey = privateKey.Neuter(); //generate public key from ExtKey to payment server
+            ExtPubKey pubKey = privateKey.Neuter(); //generate public key from ExtKey to payment server
 
             //BitcoinExtPubKey wif = pubKey.GetWif(Network.Main);
 
@@ -59,6 +66,7 @@ namespace BlockChainDemo
             //BitcoinSecret secret1 = new BitcoinSecret("L1Q3FRh73NffUdahsig3uQTj5raepff664DZtmXQEpzpCANiLiVV");
             //bool matched = (secret == secret1);
             //Console.WriteLine(secret); //Print a nice secret key string
+            #endregion
 
             #region new private key and save all info to database
             /*
@@ -162,7 +170,7 @@ namespace BlockChainDemo
                 Console.WriteLine(amount.ToDecimal(MoneyUnit.BTC) + " BTC recivied");
                 var paymentScript = coin.TxOut.ScriptPubKey;
                 Console.WriteLine(paymentScript);  // It's the ScriptPubKey
-                var address = paymentScript.GetDestinationAddress(Network.Main);
+                address = paymentScript.GetDestinationAddress(Network.Main);
                 Console.WriteLine(address); // 1HfbwN6Lvma9eDsv7mdwp529tgiyfNr7jc
                 Console.WriteLine();
             }
@@ -176,7 +184,7 @@ namespace BlockChainDemo
                 Console.WriteLine(amount.ToDecimal(MoneyUnit.BTC) + " BTC");
                 var paymentScript = scoin.TxOut.ScriptPubKey;
                 Console.WriteLine(paymentScript);  // It's the ScriptPubKey
-                var address = paymentScript.GetDestinationAddress(Network.Main);
+                address = paymentScript.GetDestinationAddress(Network.Main);
                 Console.WriteLine(address); // 1HfbwN6Lvma9eDsv7mdwp529tgiyfNr7jc
                 Console.WriteLine();
                 TotalamountSpend += amount;
