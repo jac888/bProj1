@@ -73,9 +73,10 @@ namespace BlockChainDemo.Classes
                 blocktrailaddr model = blocktrailaddr.FromString(json);
                 var transactionCount = model.data.Count();
 
-                if (OrderCountList[i] <= transactionCount)
+                if (OrderCountList[i] <= transactionCount) // <---  = need enter to update real time balance for unconfirmed transaction
                 {
                     Money T_balance = Money.Zero;
+
                     Money T_Finalbalance = Money.Zero;
 
                     for (int j = 0; j < transactionCount; j++)
